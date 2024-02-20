@@ -30,7 +30,7 @@ const toastHandle = (text, isSuccess) => {
     setTimeout(() => {
       toast.classList.remove('success');
       toast.style.display = 'none';
-      window.location.href = '/index.html';
+      window.location.href = '../../index.html';
     }, 3000);
   } else {
     localStorage.setItem('isLogin', 'false');
