@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  FacebookAuthProvider,
 } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 
 const auth = getAuth(app);
@@ -29,7 +30,7 @@ const toastHandle = (text, isSuccess) => {
     setTimeout(() => {
       toast.classList.remove('success');
       toast.style.display = 'none';
-      window.location.href = '/';
+      window.location.href = '/index.html';
     }, 3000);
   } else {
     localStorage.setItem('isLogin', 'false');
@@ -108,7 +109,20 @@ const handleGoogleLoginProvider = () => {
     });
 };
 
-const handleFacebookLoginProvider = () => {};
+const handleFacebookLoginProvider = () => {
+  const provider = new FacebookAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      console.log(user, credential);
+      toastHandle('Login', true);
+    })
+    .catch((error) => {
+      console.log(error);
+      toastHandle('Login', false);
+    });
+};
 
 if (loginForm) {
   loginForm.addEventListener('submit', handleLogin);
