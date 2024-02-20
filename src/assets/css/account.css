@@ -1,0 +1,152 @@
+@import './main.css';
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/bg2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.form {
+  width: 420px;
+  padding: 48px 24px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(30px);
+  color: var(--white-color);
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 34px;
+}
+
+.form-field:hover .form-title {
+  transform: translateY(-6px);
+  color: var(--neon-color);
+}
+
+.form-field .form-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  transition: 0.14s;
+}
+
+.form-field .form-input {
+  font-size: 1.6rem;
+  display: block;
+  width: 100%;
+  height: 36px;
+  background-color: transparent;
+  border: 1px solid var(--blue-color);
+  outline: none;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+.form-field .form-input::placeholder {
+  color: var(--gray-color);
+}
+
+.form-field .form-input:focus {
+  border-color: var(--neon-color);
+}
+
+#submit-btn {
+  width: 100%;
+  height: 42px;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  cursor: pointer;
+  transition: 0.16s;
+}
+
+#submit-btn:hover {
+  background-color: var(--neon-color);
+}
+
+.or {
+  display: block;
+  text-align: center;
+  margin: 32px;
+  font-size: 1.4rem;
+}
+
+.providers {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.providers .item {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 44px;
+  background-color: var(--blue-color);
+  border-radius: 4px;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: 0.14s;
+}
+
+.providers .item:hover {
+  background-color: var(--neon-color);
+}
+
+.providers .item img {
+  width: 32px;
+}
+
+.providers .item span {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  width: 300px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  color: var(--white-color);
+  animation: toast-move 0.4s linear;
+}
+
+.toast.success {
+  background-color: green;
+}
+
+.toast.fail {
+  background-color: red;
+}
+
+@keyframes toast-move {
+  0% {
+    opacity: 0;
+    right: 0px;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    right: 20px;
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../assets/css/account.css">
+    <script type="module" src="../assets/js/firebase-auth.js" defer></script>
+</head>
+
+11|
+
+<body>
+    <form action="#" class="form" id="signup-form">
+        <label for="email" class="form-field">
+            <h3 class="form-title">Email</h3>
+            <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+        </label>
+        <label for="password" class="form-field">
+            <h3 class="form-title">Password</h3>
+            <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+        </label>
+        <label for="re-password" class="form-field">
+            <h3 class="form-title">Confirm Password</h3>
+            <input type="password" id="re-password" class="form-input" placeholder="Enter your password" required>
+        </label>
+        <button type="submit" id="submit-btn">Sign up</button>
+        <div class="or">Or continue with</div>
+        <div class="providers">
+            <div class="item" id="google">
+                <img src="../assets/icons/google.svg" alt="google">
+                <span>Google</span>
+            </div>
+            <div class="item" id="facebook">
+                <img src="../assets/icons/facebook.svg" alt="facebook">
+                <span>Facebook</span>
+            </div>
+        </div>
+    </form>
+    <div class="toast"></div>
+</body>
+
+</html>
