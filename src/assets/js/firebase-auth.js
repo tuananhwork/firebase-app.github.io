@@ -8,6 +8,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 
 const auth = getAuth(app);
+let isLogin = false;
 
 // Get form
 
@@ -20,6 +21,8 @@ const toast = document.querySelector('.toast');
 
 const toastHandle = (text, isSuccess) => {
   if (isSuccess) {
+    isLogin = true;
+    localStorage.setItem('isLogin', 'true');
     toast.classList.add('success');
     toast.textContent = `${text} success!`;
     toast.style.display = 'flex';
@@ -29,6 +32,7 @@ const toastHandle = (text, isSuccess) => {
       window.location.href = '/';
     }, 3000);
   } else {
+    localStorage.setItem('isLogin', 'false');
     toast.classList.add('fail');
     toast.textContent = `${text} failed!`;
     toast.style.display = 'flex';
@@ -114,5 +118,9 @@ if (signupForm) {
   signupForm.addEventListener('submit', handleSignup);
 }
 
-googleBtn.addEventListener('click', handleGoogleLoginProvider);
-facebookBtn.addEventListener('click', handleFacebookLoginProvider);
+if (googleBtn && facebookBtn) {
+  googleBtn.addEventListener('click', handleGoogleLoginProvider);
+  facebookBtn.addEventListener('click', handleFacebookLoginProvider);
+}
+
+export { isLogin };

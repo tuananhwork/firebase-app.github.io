@@ -25,9 +25,12 @@
                 <img src="./src/assets/icons/search.svg" alt="search">
             </button>
         </div>
+        <!-- Tối ưu đoạn mã HTML bằng cách thêm class "hidden" để ẩn hiện các phần tử dựa trên trạng thái đăng nhập -->
         <div class="account">
-            <a href="./src/pages/login.html">Log in</a>
-            <a href="./src/pages/signup.html">Sign up</a>
+            <a href="./src/pages/login.html" id="login">Log in</a>
+            <a href="./src/pages/signup.html" id="signup">Sign up</a>
+            <a href="#" id="username" class="hidden"></a>
+            <a href="#" id="logout" class="hidden">Log out</a>
         </div>
     </header>
 

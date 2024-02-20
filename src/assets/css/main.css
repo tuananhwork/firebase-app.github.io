@@ -46,6 +46,10 @@ input {
   color: unset;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Header */
 #header {
   position: fixed;
@@ -146,6 +150,13 @@ input {
 .account a:hover {
   background-color: var(--white-color);
   color: var(--blue-color);
+}
+
+.account a#username {
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  padding: 0;
 }
 
 /* Wrapper */
